@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --text-yellow-100: rgb(255, 217, 0);
+    --text-purple-100: rgb(143,149,255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit";
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(143,149,255);
+    background: linear-gradient(150deg, rgba(143,149,255,1) 0%, rgba(55,59,145,1) 29%, rgba(9,13,88,1) 78%);
+}
+
+/*---------------------------------------------------------------------------- navbar styling ------------------------------------------------------------------------------*/
+nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15vmin 0 60px;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    font-family: "Poppins";
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+nav a:hover{
+    background-color: rgba(255, 217, 0, 0.5);
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.menu-button{
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+
+/*---------------------------------------------------------------------------- main section styling ------------------------------------------------------------------------------*/
+
+.main-sec {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-sec .right img{
+    float: right;
+    width: 55vmin;
+}
+
+.text-box {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 20px 0 5px 20px;
+}
+
+.text-box p{
+    font-size: 25px;
+    padding-right: 4rem;
+    padding-left: 3rem;
+}
+
+.card-body a{
+    text-decoration: none;
+}
+.hyperlink {
+    display: flex;
+    justify-content: center;
+    width: 115px;
+    height: 40px;
+    background: rgba(235, 208, 49, 1);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Outfit";
+    color: rgba(87, 73, 233, 1);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    transition: 0.3s ease;
+}
+.hyperlink:hover {
+    cursor: pointer;
+    background: rgb(255, 217, 0);
+    box-shadow: 0 0 5px rgb(255, 217, 0),
+                0 0 20px rgb(255, 217, 0);
+}
+.button {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 130px;
+    background: rgba(235, 208, 49, 1);
+    border-radius: 20px;
+    font-family: "Outfit";
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(87, 73, 233, 1);
+    transition: 0.3s ease;
+}
+.button:hover {
+    cursor: pointer;
+    background: rgb(255, 217, 0);
+    box-shadow: 0 0 5px rgb(255, 217, 0),
+                0 0 20px rgb(255, 217, 0);
+}
+
+
+/*---------------------------------------------------------------------------- about section styling ------------------------------------------------------------------------------*/
+
+.sub-sec:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.card-right {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: var(--text-purple-100);
+    color: white;
+    height: 350px;
+}
+
+.card-left {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: var(--text-yellow-100);
+    color: var(--text-purple-100);
+    height: 350px;
+}
+
+.leftCard {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    overflow: hidden auto;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 25%;
+    
+}
+
+.leftCard img {
+    width: 125px;
+    display: block;
+    border-radius: 50%;
+    border: 5px solid var(--text-purple-100);
+    margin-bottom: 2rem;
+}
+
+.leftCard span {
+    font-size: 2.5vmin;
+}
+
+
+.leftCard .leftCardTitle {
+    font-size: 2vmin;
+}
+
+.contactlinks {
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.contactlinks a {
+    font-size: 25px;
+    margin: 0px 10px 0px 10px;
+    text-decoration: none;
+    color: rgba(87, 73, 233, 1);
+}
+
+.contactlinks a:hover {
+    color: var(--text-purple-100);
+    transform: scale(1.5);
+}
+
+.rightCard {
+    float: left;
+    width: 75%;
+    padding: 0 10px;
+    overflow: hidden auto;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 25%;
+}
+.rightCard h2 {
+    padding: 1.5rem;
+}
+
+.rightCard p {
+    padding: 0 5rem;
+}
+.container #featuredskills {
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+
+/*---------------------------------------------------------------------------- contacts styling ------------------------------------------------------------------------------*/
+
+.container #image {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+}
+
+.container .subfont {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+span {
+    color: rgba(87, 73, 233, 1);
+}
+
+#title {
+    margin-left: 80px;
+}
+
+.subfont2{
+    color: white;
+}
+
+#summary {
+    margin-left: 8rem;
+    margin-right: 2rem;
+    font-size: 18px;
+}
+
+.shortcuts li a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.shortcuts li a:hover {
+    cursor: pointer;
+    color: rgb(255, 217, 0);
+}
+
+.contactheader {
+    display: flex;
+    justify-content: center;
+}
+
+.contactheader h2 {
+    color: var(--text-yellow-100);
+}
+
+.contactinfo {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    top: 100%;
+}
+
+.contactinfo a {
+    text-decoration: none;
+    color: white;
+}
+
+.contactinfo a:hover {
+    cursor: pointer;
+    color: var(--text-yellow-100);
+}
+
+.contactinfo p {
+    font-family: 'Outfit';
+    font-size: 18px
+}
+
+.nested {
+    margin: 70px;
+    text-align: center;
+    color: var(--text-yellow-100);
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.contactrow input {
+    background: var(--text-purple-100);
+    color: white;
+    font-family: 'Outfit';
+    font-size: 18px;
+}
+
+.contactrow input::placeholder {
+    color: white;
+    font-family: 'Outfit';
+    font-size: 18px;
+}
+
+.contactrow input:focus {
+    background: var(--text-purple-100);
+}
+
+.contactrow textarea {
+    background: var(--text-purple-100);
+    color: white;
+    font-family: 'Outfit';
+    font-size: 18px;
+}
+.contactrow textarea::placeholder {
+    color: white;
+    font-family: 'Outfit';
+    font-size: 18px;
+}
+
+.contactrow textarea:focus {
+    background: var(--text-purple-100);
+}
+
+.sendbtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 20px;
+}
+
+ul.breadcrumb li a {
+    color: white;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: var(--text-yellow-100);
+    text-decoration: underline;
+}
+
+.card-body {
+    background: rgb(131, 136, 249);
+}
+.card-body .card-title {
+    color: white;
+    font-family: "Outfit";
+}
+
+.card .card-text {
+    color: white;
+    font-family: "Outfit";
+}
+
+.card-img-top {
+    height: 250px;
+}
+
+
+/*---------------------------------------------------------------------------- services section styling ------------------------------------------------------------------------------*/
+
+
+
+h5 i {
+    color: var(--text-yellow-100);
+    font-size: 100px;
+}
+
+
+#services .card-title {
+    text-align: center;
+}
+
+#services h4 {
+    border-bottom: 3px solid var(--text-yellow-100);
+    height: 3rem;
+}
+
+#services .card{
+    border: none;
+    border-radius: 10px;
+    transition: all .5s ease;
+    height: 40vmin;
+    overflow: hidden;
+}
+#services .card:hover{
+    cursor: pointer;
+    background: rgb(255, 217, 0);
+    box-shadow: 0 0  5px rgb(255, 217, 0),
+                0 0  20px rgb(255, 217, 0),
+                0 0  50px rgb(255, 217, 0);
+    transform: scale(1.05);
+    min-height: 40vmin;
+    height: fit-content;
+    overflow: visible;
+    z-index: 50;
+}
+
+
+#services .card-body{
+    border-radius: 10px;
+}
+
+/*---------------------------------------------------------------------------- scroll to top styling ------------------------------------------------------------------------------*/
+
+.to-top {
+    background: var(--text-purple-100);
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--text-yellow-100);
+    text-decoration: none;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.to-top:active {
+    bottom: 32px;
+    opacity: 1;
+}
+
+/*---------------------------------------------------------------------------- portfolio styling ------------------------------------------------------------------------------*/
+
+.portfoliosection .main-sec {
+    min-height: 70vh;
+}
+
+
+/*---------------------------------------------------------------------------- animation styling ------------------------------------------------------------------------------*/
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.card {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 25%;
+}
+
+.showimg {
+    animation: appear 1s linear;
+}
+
+.portfoliosection .container .card {
+    animation: appear .8s linear;
+}

@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+<!--Main section-->
+
+<div class="main-sec container">
+        {% for msec in main %}
+            <div class="text-box showimg">
+                <h2>Hi there!</h2>
+                <p>{{ msec.Description }}</p>
+            </div>
+            <div class="right">
+                <img class="showimg" src="{{ msec.showcaseimg.url }}" alt=""> 
+            </div> 
+        {% endfor %}
+</div>
+
+<div style="height: 300px; display: block;"></div>
+
+<!--secondary section-->
+<section id="aboutsection">
+{% for sub in sub %}
+<div class="sub-sec container">
+
+<!-- LEFT CARD 'YELLOW' -->
+    <div class="leftCard">
+        <div class="card-left">
+            <img src="{{ sub.image.url }}" class="mx-auto">
+            <span>Hi I'm {{ sub.Name }}</span>
+            <span class="leftCardTitle">Founder/Student</span>
+            <div class="mx-auto mt-5">
+                <div class="container">
+                    <div class="contactlinks">
+                        <a href="https://discord.gg/JhGNQwaeZt" class="fa-brands fa-discord"></a>
+                        <a href="https://www.facebook.com/MichaelAngeloLim2799" class="fa-brands fa-facebook"></a>
+                        <a href="https://www.linkedin.com/in/michael-angelo-lim-0a1b38300/" class="fa-brands fa-linkedin"></a>
+                        <a href="https://www.youtube.com/@Greywolf2127" class="fa-brands fa-youtube"></a>
+                        <a href="https://www.upwork.com/freelancers/~012fa5e78c76bf1601" class="fa-brands fa-square-upwork"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- RIGHT CARD 'PURPLE' -->
+    <div class="rightCard">
+        <div class="card-right">
+            <h2>Personal Summary</h2>
+            <p>{{ sub.personalsummary }}</p>
+        </div>
+    </div>
+</div>
+</section>
+<div style="height: 150px; display: block;"></div>
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="col-6 mb-3">
+        <h3 style="color: var(--text-yellow-100);">Featured Skills</h3>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <p></p>
+        </div>
+        <div class="col-8">
+            <div class="card" id="featuredskills" style="background:rgba(143, 149, 255, 0.8); border-radius: 15px; height: 90px;">
+                    <img class="mx-auto mt-2" src="{% static 'assets/skill icons.png' %}" alt="" style="max-width: fit-content;">  
+            </div>
+        </div>
+        <div class="col-2">
+            <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</section>
+<div style="height: 150px; display: block;"></div>
+
+<!--contacts section-->
+
+<section id="contactsection">
+        <div class="container mb-5">
+            <div class="contactheader mb-5">
+                <div class="contactborder">
+                    <h2>Contacts</h2>
+                </div>
+            </div>
+            <div class="contactinfo">
+                <a href="#" class="bi bi-telephone" style="font-size: 70px;"><p>+63 9485860507</p></a>
+                <a href="#" class="bi bi-envelope" style="font-size: 70px;"><p>m.lim271999@gmail.com</p></a>
+                <a href="#" class="bi bi-cloud-arrow-down" style="font-size: 70px;"><p>Download CV</p></a>
+                <a href="https://www.facebook.com/MichaelAngeloLim2799" class="bi bi-facebook" style="font-size: 70px;"><p>Facebook</p></a>
+            </div>
+            <div class="nested container">
+                <p>SEND ME AN EMAIL</p>
+            </div>
+        </div>
+        <div class="container px-5">
+            <form action="{% url 'home' %}" method="post">
+                {% csrf_token %}
+                <div class="contactrow row">
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control" name="Name" placeholder="Name" required>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="feedback" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                </div>
+                <div class="sendbtn">
+                    <button type="submit" class="button">Send</button>
+                </div>
+            </form>
+        </div>
+</section>
+<div style="height: 150px; display: block;"></div>
+
+<!--  Services section  -->
+<section id="services">
+    <div class="container">
+        <div class="contactheader mb-5">
+            <div class="contactborder">
+                <h2>Services</h2>
+            </div>
+        </div>
+        <div class="row">
+  <div class="col-sm-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fa-solid fa-palette"></i></h5>
+        <h4 class="card-title">Web design</h4>
+        <p class="card-text">Experience the perfect blend of beauty and functionality with our custom web design services. I craft visually stunning websites that not only reflect your brand’s unique identity but also captivate your audience and elevate user experience to new heights.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fa-solid fa-code"></i></h5>
+        <h4 class="card-title">Web Development</h4>
+        <p class="card-text">My custom web development services are designed to precisely align with your unique business requirements. From the initial concept through to the final launch, I develop responsive and user-friendly websites that not only engage your audience but also drive significant conversions. My approach ensures that your website is both visually appealing and functionally robust, providing an optimal user experience across all devices.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fa-solid fa-pen-ruler"></i></h5>
+        <h4 class="card-title">Graphic Design</h4>
+        <p class="card-text">My brand identity design services help you create a strong and memorable brand presence. I develop cohesive visual elements, including logos, color schemes, and typography, that reflect your brand’s personality and values.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</section>
+<div style="height: 150px; display: block;"></div>
+<a href="#" class="to-top"><i class="fa-solid fa-arrow-up"></i></a>
+
+<div style="height: 150px; display: block;"></div>
+<div class="border mb-5"></div>
+
+<!-- scroll to top JS -->
+<script src="{% static 'js/script.js' %}"></script>
+
+<!-- sending email JS -->
+ 
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+{% endblock %}

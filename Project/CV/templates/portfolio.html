@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+</ul>
+</div>
+<div class="contactheader">
+    <div class="contactborder">
+        <h2>Portfolio</h2>
+    </div>
+</div>
+<section class="portfoliosection">
+<div class="main-sec container">
+<div class="row row-cols-1 row-cols-md-3">
+    {% for sample in samples %}
+    <div class="col mb-4">
+      <div class="card">
+        <div class="view overlay">
+          <img class="card-img-top" src="{{sample.image.url}}" alt="">
+          <a href="{% url 'detailed' sample.id %}">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{sample.name}}</h4>
+          <p class="card-text">{{sample.name}}</p>
+          <a href="{% url 'detailed' sample.id %}" class="hyperlink">View</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+<div style="height: 150px; display: block;"></div>
+<div class="border mb-5"></div>
+{% endblock %}

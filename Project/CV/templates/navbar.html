@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mStyle.css'%}">
+<nav>
+    <ul class="sidebar">
+        <li onclick="hideSidebar()"><a><i class="fa-solid fa-xmark"></i></a></li>
+        <li><a href="{% url 'home' %}#aboutsection">About</a></li>
+        <li><a href="{% url 'home' %}#contactsection">Contact</a></li>
+        <li><a href="{% url 'home' %}#services">Services</a></li>
+        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+    </ul>
+    <ul class="">
+        <li><a href="{% url 'home' %}">My Portfolio</a></li>
+        <li class="hideOnMobile"><a href="{% url 'home' %}#aboutsection">About</a></li>
+        <li class="hideOnMobile"><a href="{% url 'home' %}#contactsection">Contact</a></li>
+        <li class="hideOnMobile"><a href="{% url 'home' %}#services">Services</a></li>
+        <li class="hideOnMobile"><a href="{% url 'portfolio' %}">Portfolio</a></li>
+        <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+    </ul>
+</nav>
+<script>
+    function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+    }
+</script>

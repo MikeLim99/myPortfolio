@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--Carousel Wrapper-->
+
+
+<center>
+<div class="container">
+<!-- breadcrumb -->
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'portfolio' %}">Portfolio</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Library</li>
+</ul>
+
+<div id="carousel-example-1z" class="carousel slide carousel-fade pt-5" data-ride="carousel" style="width: 90vmin;">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+    {% for img in img %}
+      <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
+    {% endfor %}
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      {% for img in img %}
+      <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+        <img class="d-block w-100" src="{{img.image.url}}"
+          alt="First slide">
+      </div>
+      {% endfor %}
+      <!--/First slide-->
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only"></span>
+    </a>
+    <!--/.Controls-->
+  </div>
+</div>
+</div>
+</center>
+<div style="height: 150px; display: block;"></div>
+<div class="border mb-5"></div>
+{% endblock %}

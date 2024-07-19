@@ -1,0 +1,81 @@
+@media(max-width:800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+    .card-right {
+        height: fit-content;
+    }
+    .card-left {
+        height: fit-content;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .contactinfo p {
+        font-family: 'Outfit';
+        font-size: 3vmin;
+    }
+    .main-sec {
+        display: block;
+        align-items: center;
+    }
+    .main-sec .right img{
+        width: 100vmin;
+    }
+    .text-box {
+        color: white;
+    }
+    
+    .text-box h2 {
+        text-align: center;
+        padding-left: 50px;
+        margin-right: 50px;
+        font-size: 30px;
+        
+    }
+    .text-box p{
+        text-align: center;
+        padding-left: 50px;
+        margin-right: 50px;
+        font-size: 20px;
+    }
+    /* sub section styling */
+    .leftCard {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .rightCard {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .card-right {
+        height: fit-content;
+    }
+    .card-left {
+        height: fit-content;
+    }
+    .card-left span {
+        display: block;
+        font-size: 5vmin;
+    }
+    .card-left .leftCardTitle{
+        font-size: 3.5vmin;
+    }
+    /* services section styling */
+}
+
+@media(max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+    .contactinfo p {
+        font-family: 'Outfit';
+        font-size: 3vmin;
+    }
+}
