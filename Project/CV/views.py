@@ -32,3 +32,7 @@ def detailed(request, id):
     sample = get_object_or_404(Portfolio, id=id)
     img = portfolioImage.objects.filter(portfolio=sample)
     return render(request, 'detailed.html',{'sample':sample, 'img': img})
+
+def posts(request):
+    main = Mainsection.objects.all()
+    return render (request, 'posts.html',{'main': main})

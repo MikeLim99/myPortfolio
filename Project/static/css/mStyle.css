@@ -31,16 +31,10 @@
     }
     
     .text-box h2 {
-        text-align: center;
-        padding-left: 50px;
-        margin-right: 50px;
         font-size: 30px;
         
     }
     .text-box p{
-        text-align: center;
-        padding-left: 50px;
-        margin-right: 50px;
         font-size: 20px;
     }
     /* sub section styling */
@@ -53,6 +47,10 @@
         width: 100%;
         display: block;
         margin-bottom: 20px;
+    }
+    .rightCard p {
+        padding: 0;
+        text-align: start;
     }
     .card-right {
         height: fit-content;
@@ -68,6 +66,9 @@
         font-size: 3.5vmin;
     }
     /* services section styling */
+    #services .card{
+        height: 175px;
+    }
 }
 
 @media(max-width:400px){
